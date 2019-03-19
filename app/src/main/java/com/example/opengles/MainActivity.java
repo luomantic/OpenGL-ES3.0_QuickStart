@@ -1,13 +1,35 @@
 package com.example.opengles;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.opengles.views.LuoGLSurfaceView;
+
 public class MainActivity extends AppCompatActivity {
+    private LuoGLSurfaceView surfaceView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        surfaceView = new LuoGLSurfaceView(this);
+        surfaceView.requestFocus();
+        surfaceView.setFocusableInTouchMode(true); // 设置为可触控
+
+        setContentView(surfaceView);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        surfaceView.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        surfaceView.onPause();
     }
 }

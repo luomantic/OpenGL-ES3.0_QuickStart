@@ -35,10 +35,10 @@ public class ShaderUtil3 {
         if (program != 0) {
             // 向程序中加入顶点着色器
             GLES30.glAttachShader(program, vertexShader);
-            checkGLError("glAttachShader");
+            checkGLError();
             // 向程序中加入片元着色器
             GLES30.glAttachShader(program, fragmentShader);
-            checkGLError("glAttachShader");
+            checkGLError();
             // 链接程序
             GLES30.glLinkProgram(program);
             // 存放链接成功program数量的数组
@@ -91,11 +91,11 @@ public class ShaderUtil3 {
 
 
     // 检查每一步操作是否有错误的方法
-    private static void checkGLError(String op) {
+    private static void checkGLError() {
         int error;
         if ((error = GLES30.glGetError()) != GLES30.GL_NO_ERROR) {
-            Log.e(TAG, op + ": glError" + error);
-            throw new RuntimeException(op + ": glError" + error);
+            Log.e(TAG, "glAttachShader" + ": glError" + error);
+            throw new RuntimeException("glAttachShader" + ": glError" + error);
         }
     }
 
