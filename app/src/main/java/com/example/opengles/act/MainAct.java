@@ -1,4 +1,4 @@
-package com.example.opengles;
+package com.example.opengles.act;
 
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.opengles.views.LuoGLSurfaceView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainAct extends AppCompatActivity {
     private LuoGLSurfaceView surfaceView;
 
     @Override
