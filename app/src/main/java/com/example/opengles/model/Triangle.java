@@ -68,27 +68,7 @@ public class Triangle {
     }
 
     /**
-     * 初始化着色器
-     */
-    private void initShader() {
-        // 加载 顶点着色器 脚本
-        String mVertexShader = ResourceUtils.readAssets2String("vertex.sh");
-
-        // 加载 片元着色器 脚本
-        String mfragmentShader = ResourceUtils.readAssets2String("frag.sh");
-        // 基于顶点着色器与片元着色器创建程序
-        mProgram= ShaderUtil3.createProgram(mVertexShader, mfragmentShader);
-
-        // 获取程序中顶点 位置属性 引用
-        maPositionHandle = GLES30.glGetAttribLocation(mProgram, "aPosition");
-        // 获取程序中顶点 颜色属性 引用
-        maColorHandle = GLES30.glGetAttribLocation(mProgram, "aColor");
-        // 获取程序中总变换矩阵引用
-        muMVPMatrixHandle = GLES30.glGetUniformLocation(mProgram, "uMVPMatrix");
-    }
-
-    /**
-     * 初始化顶点数据
+     * 初始化顶点数据 —— 将数据放入ByteBuffer缓冲中
      */
     private void initVertexData() {
         vCount = 3;
@@ -119,6 +99,26 @@ public class Triangle {
         mColorBuffer = colorBuffer.asFloatBuffer();
         mColorBuffer.put(colors);
         mColorBuffer.position(0);
+    }
+
+    /**
+     * 初始化着色器 - 创建着色器程序，获取着色器程序的id，并将缓冲好的数据，压入渲染管线
+     */
+    private void initShader() {
+        // 加载 顶点着色器 脚本
+        String mVertexShader = ResourceUtils.readAssets2String("vertex.sh");
+
+        // 加载 片元着色器 脚本
+        String mfragmentShader = ResourceUtils.readAssets2String("frag.sh");
+        // 基于顶点着色器与片元着色器创建程序
+        mProgram= ShaderUtil3.createProgram(mVertexShader, mfragmentShader);
+
+        // 获取程序中顶点 位置属性 引用
+        maPositionHandle = GLES30.glGetAttribLocation(mProgram, "aPosition");
+        // 获取程序中顶点 颜色属性 引用
+        maColorHandle = GLES30.glGetAttribLocation(mProgram, "aColor");
+        // 获取程序中总变换矩阵引用
+        muMVPMatrixHandle = GLES30.glGetUniformLocation(mProgram, "uMVPMatrix");
     }
 
     public void drawSelf(){
