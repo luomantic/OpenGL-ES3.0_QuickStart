@@ -7,22 +7,21 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.opengles.R;
-import com.example.opengles.adapter.SimpleHomeAdapter;
+import com.example.opengles.adapter.HomeSimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainAct extends AppCompatActivity {
-    //String url = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=532808234,3202881386&fm=27&gp=0.jpg";
-    List<String> dataList;
+public class HomeSimpleAct extends AppCompatActivity {
+    private List<String> dataList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_main);
+        setContentView(R.layout.act_home_simple);
 
         initData();
         initView();
@@ -31,24 +30,24 @@ public class MainAct extends AppCompatActivity {
     private void initView() {
         RecyclerView recyclerView = findViewById(R.id.gl_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        SimpleHomeAdapter simpleHomeAdapter = new SimpleHomeAdapter(R.layout.item_simple_main_adapter, dataList);
+        HomeSimpleAdapter homeSimpleAdapter = new HomeSimpleAdapter(R.layout.item_home_adapter_simple, dataList);
 
-        simpleHomeAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
-        simpleHomeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        homeSimpleAdapter.openLoadAnimation(BaseQuickAdapter.SCALEIN);
+        homeSimpleAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                LogUtils.e("点击" + position);
+                ToastUtils.showShort("Item Click:" + position);
             }
         });
 
-        simpleHomeAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+        homeSimpleAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                LogUtils.e(position);
+                ToastUtils.showShort("Child Item Click:" + position);
             }
         });
 
-        recyclerView.setAdapter(simpleHomeAdapter);
+        recyclerView.setAdapter(homeSimpleAdapter);
     }
 
     private void initData() {

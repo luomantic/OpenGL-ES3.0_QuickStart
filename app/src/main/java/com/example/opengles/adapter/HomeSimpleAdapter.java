@@ -8,9 +8,9 @@ import com.example.opengles.R;
 
 import java.util.List;
 
-public class SimpleHomeAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+public class HomeSimpleAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
-    public SimpleHomeAdapter(int layoutResId, List<String> data) {
+    public HomeSimpleAdapter(int layoutResId, List<String> data) {
         super(layoutResId, data);
     }
 
