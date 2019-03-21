@@ -34,7 +34,7 @@ public class SixPointStar {
      */
     public float xAngle = 0;
 
-    /*
+    /**
      * 绕y轴旋转的角度
      */
     public float yAngle = 0;
@@ -75,8 +75,8 @@ public class SixPointStar {
             fList.add(z);
 
             // 第三个点的坐标
-            fList.add((float) (R * UNIT_SIZE * Math.cos(angle + tempAngle)));
-            fList.add((float) (R * UNIT_SIZE * Math.sin(angle + tempAngle)));
+            fList.add((float) (R * UNIT_SIZE * Math.cos(Math.toRadians(angle + tempAngle))));
+            fList.add((float) (R * UNIT_SIZE * Math.sin(Math.toRadians(angle + tempAngle))));
             fList.add(z);
         }
 
