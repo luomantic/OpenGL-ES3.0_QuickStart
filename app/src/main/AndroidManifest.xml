@@ -24,6 +24,7 @@
 
         <activity android:name=".act.HomeSimpleAct" />
         <activity android:name=".act.TriangleAct" />
+        <activity android:name=".act.SixPointStarAct" />
     </application>
 
 </manifest>

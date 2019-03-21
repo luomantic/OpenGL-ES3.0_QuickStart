@@ -1,4 +1,4 @@
-package com.example.opengles.model;
+package com.example.opengles.shapes;
 
 import android.opengl.GLES30;
 import android.opengl.Matrix;

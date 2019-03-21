@@ -6,26 +6,26 @@ import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.util.AttributeSet;
 
-import com.example.opengles.model.Triangle;
+import com.example.opengles.shapes.Triangle;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class LuoGLSurfaceView extends GLSurfaceView {
+public class TriangleSV extends GLSurfaceView {
 
     final float ANGLE_SPAN = 0.375f; // 每次三角形旋转的角度
 
     private ScreenRenderer screenRenderer; // 自定义渲染器
 
-    public LuoGLSurfaceView(Context context) {
+    public TriangleSV(Context context) {
         super(context);
         this.setEGLContextClientVersion(3);
         screenRenderer = new ScreenRenderer();
         this.setRenderer(screenRenderer);
-        this.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY); // 设置渲染模式，连续渲染
+        this.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY); // 设置渲染模式为主动渲染
     }
 
-    public LuoGLSurfaceView(Context context, AttributeSet attrs) {
+    public TriangleSV(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

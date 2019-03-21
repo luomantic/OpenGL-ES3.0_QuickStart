@@ -6,7 +6,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.opengles.R;
-import com.example.opengles.model.RvData;
+import com.example.opengles.models.RvData;
 
 import java.util.List;
 

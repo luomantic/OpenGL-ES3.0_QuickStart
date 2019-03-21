@@ -10,7 +10,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.opengles.R;
 import com.example.opengles.adapter.HomeAdapter;
-import com.example.opengles.model.RvData;
+import com.example.opengles.models.RvData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +44,9 @@ public class HomeAct extends Activity {
                     case 1:
                         startActivity(new Intent(HomeAct.this, TriangleAct.class));
                         break;
+                    case 2:
+                        startActivity(new Intent(HomeAct.this, SixPointStarAct.class));
+                        break;
                 }
             }
         });
@@ -51,7 +54,7 @@ public class HomeAct extends Activity {
 
     private void initData() {
         String[] names = {
-                "Simple RecyclerView", "Draw Triangle"
+                "Simple RecyclerView", "Draw Triangle", "Draw SixPointStar"
         };
         rvDataList = new ArrayList<>();
         for (String name : names) {

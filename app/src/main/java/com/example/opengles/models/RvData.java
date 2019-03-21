@@ -1,4 +1,4 @@
-package com.example.opengles.model;
+package com.example.opengles.models;
 
 public class RvData {
 
