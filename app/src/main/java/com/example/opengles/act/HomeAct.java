@@ -47,6 +47,9 @@ public class HomeAct extends Activity {
                     case 2:
                         startActivity(new Intent(HomeAct.this, SixPointStarAct.class));
                         break;
+                    case 3:
+                        startActivity(new Intent(HomeAct.this, CubeAct.class));
+                        break;
                 }
             }
         });
@@ -54,7 +57,8 @@ public class HomeAct extends Activity {
 
     private void initData() {
         String[] names = {
-                "Simple RecyclerView", "Draw Triangle", "Draw SixPointStar"
+                "Simple RecyclerView", "Draw Triangle", "Draw SixPointStar",
+                "平移变换"
         };
         rvDataList = new ArrayList<>();
         for (String name : names) {

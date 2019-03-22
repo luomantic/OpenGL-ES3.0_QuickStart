@@ -13,6 +13,9 @@ import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 六角形
+ */
 public class SixPointStar {
     private int mProgram; // 自定义渲染管线着色器程序id
     private int muMVPMatrixHandle;  // 总变换矩阵引用

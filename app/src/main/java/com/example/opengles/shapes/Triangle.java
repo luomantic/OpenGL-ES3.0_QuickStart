@@ -10,6 +10,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
+/**
+ * 三角形
+ */
 public class Triangle {
     /**
      * 4x4 投影矩阵
