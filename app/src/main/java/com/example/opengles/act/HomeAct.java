@@ -57,8 +57,8 @@ public class HomeAct extends Activity {
 
     private void initData() {
         String[] names = {
-                "Simple RecyclerView", "Draw Triangle", "Draw SixPointStar",
-                "平移变换"
+                "Simple RecyclerView", "自动旋转三角形", "透视投影的六角形",
+                "平移变换的立方体"
         };
         rvDataList = new ArrayList<>();
         for (String name : names) {

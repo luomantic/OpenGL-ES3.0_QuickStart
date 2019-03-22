@@ -29,7 +29,7 @@ public class ShaderUtil3 {
             return 0;
         }
 
-        // 创建shader程序
+        // 创建 shader程序
         int program = GLES30.glCreateProgram();
         // 若程序创建成功，则向程序中加入顶点着色器于片元着色器
         if (program != 0) {
@@ -48,7 +48,7 @@ public class ShaderUtil3 {
             // 若链接失败则报错并删除程序
             if (linkStatus[0] != GLES30.GL_TRUE) {
                 Log.e(TAG, "Could not link program: ");
-                Log.e("ES20_ERROR", GLES30.glGetProgramInfoLog(program));
+                Log.e(TAG, GLES30.glGetProgramInfoLog(program));
                 GLES30.glDeleteProgram(program);
                 program = 0;
             }
@@ -58,13 +58,13 @@ public class ShaderUtil3 {
     }
 
     /**
-     * 加载制定shader字符串的方法
+     * 加载指定 ‘shader脚本字符串’ 的方法
      * @param shaderType shader的类型  GLES30.GL_VERTEX_SHADER(顶点)   GLES30.GL_FRAGMENT_SHADER(片元)
      * @param source shader的脚本字符串
      * @return 返回shader，若shader语法错误编译不通，则返回shader = 0;
      */
     private static int loadShader(int shaderType, String source){
-        // 创建一个新的shader
+        // 创建一个 shader，并记录其id
         int shader = GLES30.glCreateShader(shaderType);
 
         // 若创建成功则加载shader
@@ -79,7 +79,7 @@ public class ShaderUtil3 {
             GLES30.glGetShaderiv(shader, GLES30.GL_COMPILE_STATUS, compiled, 0);
 
             if (compiled[0] == 0) { // 若编译失败，则显示错误日志，并删除此shader
-                Log.e(TAG, "不能编译shader" + shaderType + ":");
+                Log.e(TAG, "Could not compile shader" + shaderType + ":");
                 Log.e(TAG, GLES30.glGetShaderInfoLog(shader));
                 GLES30.glDeleteShader(shader);
                 shader = 0;
@@ -90,7 +90,9 @@ public class ShaderUtil3 {
     }
 
 
-    // 检查每一步操作是否有错误的方法
+    /**
+     * 检查向GPU着色程序中，加入 ‘顶点着色器脚本’ 和 ‘片元着色器脚本’ 是否加载失败
+     */
     private static void checkGLError() {
         int error;
         if ((error = GLES30.glGetError()) != GLES30.GL_NO_ERROR) {

@@ -15,12 +15,12 @@ import java.nio.FloatBuffer;
  */
 public class Triangle {
     /**
-     * 4x4 投影矩阵
+     * 4x4 投影矩阵  ( 投影 —— projection, projective )
      */
     public static float[] mProjMatrix = new float[16];
 
     /**
-     * 摄像机位置朝向的参数矩阵
+     * 摄像机位置朝向的参数矩阵  ( 摄像机, 视像管, 光导摄像管 —— vidicon )
      */
     public static float[] mVMatrix = new float[16];
 
@@ -28,6 +28,8 @@ public class Triangle {
      * 自定义渲染管线程序id
      */
     private int mProgram;
+
+
 
     /**
      * 总变换矩阵引用
@@ -43,6 +45,8 @@ public class Triangle {
      * 顶点颜色属性引用
      */
     private int maColorHandle;
+
+
 
     /**
      *  具体物体的移动旋转矩阵，包括旋转、平移、缩放
@@ -74,8 +78,8 @@ public class Triangle {
      * 初始化顶点数据 —— 将数据放入ByteBuffer缓冲中
      */
     private void initVertexData() {
-        vCount = 3;
-        final float UNIT_SIZE = 0.2f;
+        vCount = 3; // 顶点数量
+        final float UNIT_SIZE = 0.2f; // 设置单位长度
 
         // 顶点 坐标数组
         float vertices[] = new float[] {
