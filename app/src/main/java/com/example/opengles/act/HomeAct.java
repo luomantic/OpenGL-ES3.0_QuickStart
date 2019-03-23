@@ -52,6 +52,8 @@ public class HomeAct extends Activity {
                         break;
                     case 4:
                         startActivity(new Intent(HomeAct.this, PointLineAct.class));
+                    case 5:
+                        startActivity(new Intent(HomeAct.this, TriangleStripAct.class));
                         break;
                 }
             }
@@ -61,7 +63,7 @@ public class HomeAct extends Activity {
     private void initData() {
         String[] names = {
                 "Simple RecyclerView", "三角形", "六角形",
-                "立方体", "绘制方式"
+                "立方体", "点、线段的绘制方式", "绘制扇形(省略绘制非连续三角形)"
         };
         rvDataList = new ArrayList<>();
         for (String name : names) {

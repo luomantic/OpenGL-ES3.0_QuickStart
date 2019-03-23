@@ -12,6 +12,9 @@ import com.example.opengles.R;
 import com.example.opengles.models.Constant;
 import com.example.opengles.views.PointLineSV;
 
+/**
+ * 点跟线段的绘制方式
+ */
 public class PointLineAct extends Activity {
     private PointLineSV pointLineSV;
     private RadioButton rb_point;
