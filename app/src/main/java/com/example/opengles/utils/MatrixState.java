@@ -150,6 +150,11 @@ public class MatrixState {
         Matrix.rotateM(currMatrix, 0, angle, x, y, z);
     }
 
+    // 缩放
+    public static void scale(float x, float y, float z) {
+        Matrix.scaleM(currMatrix, 0, x, y, z);
+    }
+
     // 获取具体物体的变换矩阵
     public static float[] getMMatrix() {
         return currMatrix;

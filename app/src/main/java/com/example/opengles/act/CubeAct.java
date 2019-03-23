@@ -45,6 +45,7 @@ public class CubeAct extends Activity {
                         startActivity(new Intent(CubeAct.this, CubeRotateAct.class));
                         break;
                     case 2:
+                        startActivity(new Intent(CubeAct.this, CubeScaleAct.class));
                         break;
                 }
             }
@@ -56,7 +57,7 @@ public class CubeAct extends Activity {
                 "平移", "旋转", "缩放"
         };
         rvDataList = new ArrayList<>();
-        for(String name : names){
+        for (String name : names) {
             RvData rvData = new RvData();
             rvData.setName(name);
             String url = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=532808234,3202881386&fm=27&gp=0.jpg";
