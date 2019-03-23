@@ -33,6 +33,8 @@
         <activity android:name=".act.CubeTranslateAct" />
         <activity android:name=".act.CubeRotateAct" />
         <activity android:name=".act.CubeScaleAct" />
+
+        <activity android:name=".act.PointLineAct" />
     </application>
 
 </manifest>

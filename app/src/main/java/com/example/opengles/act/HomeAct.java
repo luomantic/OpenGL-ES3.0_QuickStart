@@ -30,14 +30,14 @@ public class HomeAct extends Activity {
     private void initView() {
         RecyclerView recyclerView = findViewById(R.id.rv_home_simple);
         HomeAdapter homeAdapter = new HomeAdapter(R.layout.item_home_adapter, rvDataList);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setAdapter(homeAdapter);
 
         homeAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
         homeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         startActivity(new Intent(HomeAct.this, HomeSimpleAct.class));
                         break;
@@ -50,6 +50,9 @@ public class HomeAct extends Activity {
                     case 3:
                         startActivity(new Intent(HomeAct.this, CubeAct.class));
                         break;
+                    case 4:
+                        startActivity(new Intent(HomeAct.this, PointLineAct.class));
+                        break;
                 }
             }
         });
@@ -58,7 +61,7 @@ public class HomeAct extends Activity {
     private void initData() {
         String[] names = {
                 "Simple RecyclerView", "三角形", "六角形",
-                "立方体"
+                "立方体", "绘制方式"
         };
         rvDataList = new ArrayList<>();
         for (String name : names) {

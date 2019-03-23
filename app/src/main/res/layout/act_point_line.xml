@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_point_line"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/rg_point_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/ll_point_line1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="draw point" />
+
+            <RadioButton
+                android:id="@+id/rb_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="draw line" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_point_line2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/line_strip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="draw line_strip" />
+
+            <RadioButton
+                android:id="@+id/line_loop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="draw line_loop" />
+        </LinearLayout>
+    </RadioGroup>
+</LinearLayout>
