@@ -42,6 +42,7 @@ public class CubeAct extends Activity {
                         startActivity(new Intent(CubeAct.this, CubeTranslateAct.class));
                         break;
                     case 1:
+                        startActivity(new Intent(CubeAct.this, CubeRotateAct.class));
                         break;
                     case 2:
                         break;

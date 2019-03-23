@@ -31,6 +31,7 @@
 
         <activity android:name=".act.CubeAct" />
         <activity android:name=".act.CubeTranslateAct" />
+        <activity android:name=".act.CubeRotateAct" />
     </application>
 
 </manifest>

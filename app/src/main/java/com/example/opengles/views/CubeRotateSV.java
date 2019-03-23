@@ -11,9 +11,9 @@ import com.example.opengles.utils.MatrixState;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public class CubeSV extends GLSurfaceView {
+public class CubeRotateSV extends GLSurfaceView {
 
-    public CubeSV(Context context) {
+    public CubeRotateSV(Context context) {
         super(context);
         this.setEGLContextClientVersion(3);
         ScreenRenderer screenRenderer = new ScreenRenderer();
@@ -63,7 +63,8 @@ public class CubeSV extends GLSurfaceView {
 
             //绘制变换后的立方体
             MatrixState.pushMatrix();//保护现场
-            MatrixState.translate(3.5f, 0, 0);//沿x方向平移3.5
+            MatrixState.translate(3.5f, 0, 0); // 沿x方向平移3.5
+            MatrixState.rotate(30, 0, 0, 1);  // 绕z轴旋转30度
             cube.drawSelf();//绘制立方体
             MatrixState.popMatrix();//恢复现场
         }

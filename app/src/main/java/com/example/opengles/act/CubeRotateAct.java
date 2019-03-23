@@ -6,10 +6,10 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.opengles.views.CubeTranslateSV;
+import com.example.opengles.views.CubeRotateSV;
 
-public class CubeTranslateAct extends Activity {
-    private CubeTranslateSV cubeTranslateSV;
+public class CubeRotateAct extends Activity {
+    private CubeRotateSV cubeRotateSV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,22 +19,22 @@ public class CubeTranslateAct extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        cubeTranslateSV = new CubeTranslateSV(this);
-        setContentView(cubeTranslateSV);
+        cubeRotateSV = new CubeRotateSV(this);
+        setContentView(cubeRotateSV);
 
-        cubeTranslateSV.requestFocus();
-        cubeTranslateSV.setFocusableInTouchMode(true);
+        cubeRotateSV.requestFocus();
+        cubeRotateSV.setFocusableInTouchMode(true);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        cubeTranslateSV.onResume();
+        cubeRotateSV.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        cubeTranslateSV.onPause();
+        cubeRotateSV.onPause();
     }
 }

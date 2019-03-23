@@ -33,7 +33,7 @@ public class MatrixState {
     ) {
         Matrix.setLookAtM(
                 mVMatrix,       // 存储生成矩阵元素的float[]类型数组
-                0,     // //填充起始偏移量
+                0,     // 填充起始偏移量
                 cx, cy, cz,
                 tx, ty, tz,
                 upx, upy, upz
@@ -103,48 +103,54 @@ public class MatrixState {
 
     //////////////////////////// CUBE ////////////////////////////
 
-    private static float[] currMatrix;//当前变换矩阵
+    private static float[] currMatrix; // 当前变换矩阵
 
-    private static float[][] mStack = new float[10][16];//用于保存变换矩阵的栈
-    private static int stackTop = -1;//栈顶索引
+    private static float[][] mStack = new float[10][16]; // 用于保存变换矩阵的栈
+    private static int stackTop = -1; // 栈顶索引
 
-    //产生无任何变换的初始矩阵
+    // 产生无任何变换的初始矩阵
     public static void setInitStack() {
         currMatrix = new float[16];
         Matrix.setRotateM(currMatrix, 0, 0, 1, 0, 0);
     }
 
-    //将当前变换矩阵存入栈中
+    // 将当前变换矩阵存入栈中
     public static void pushMatrix() {
-        stackTop++;//栈顶索引加1
-        //当前变换矩阵中的各元素入栈
+        stackTop++; // 栈顶索引加1
+        // 当前变换矩阵中的各元素入栈
         System.arraycopy(currMatrix, 0, mStack[stackTop], 0, 16);
     }
 
-    //从栈顶取出变换矩阵
+    // 从栈顶取出变换矩阵
     public static void popMatrix() {
-        //栈顶矩阵元素进当前变换矩阵
+        // 栈顶矩阵元素进当前变换矩阵
         System.arraycopy(mStack[stackTop], 0, currMatrix, 0, 16);
-        stackTop--;//栈顶索引减1
+        stackTop--; // 栈顶索引减1
     }
 
-    //沿X、Y、Z轴方向进行平移变换的方法
-    public static void translate(float x, float y, float z) {
-        Matrix.translateM(currMatrix, 0, x, y, z);
-    }
-
-    //获取具体物体的总变换矩阵
-    private static float[] mTotalMatrix = new float[16];//总变换矩阵
+    // 获取具体物体的总变换矩阵
     public static float[] getFinalMatrix()//计算产生总变换矩阵的方法
     {
-        //摄像机矩阵乘以变换矩阵
+        // 摄像机矩阵乘以变换矩阵
         Matrix.multiplyMM(mTotalMatrix, 0, mVMatrix, 0, currMatrix, 0);
-        //投影矩阵乘以上一步的结果矩阵
+        // 投影矩阵乘以上一步的结果矩阵
         Matrix.multiplyMM(mTotalMatrix, 0, mProjMatrix, 0, mTotalMatrix, 0);
         return mTotalMatrix;
     }
 
-    //获取具体物体的变换矩阵
+    private static float[] mTotalMatrix = new float[16];//总变换矩阵
+
+    // 沿X、Y、Z轴方向进行平移变换的方法
+    public static void translate(float x, float y, float z) {
+        Matrix.translateM(currMatrix, 0, x, y, z);
+    }
+
+    // 旋转
+    public static void rotate(float angle, float x, float y, float z) {
+        Matrix.rotateM(currMatrix, 0, angle, x, y, z);
+    }
+
+    // 获取具体物体的变换矩阵
     public static float[] getMMatrix() {
         return currMatrix;
     }
