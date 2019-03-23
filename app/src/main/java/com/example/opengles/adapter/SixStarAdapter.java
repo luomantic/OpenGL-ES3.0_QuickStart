@@ -19,8 +19,8 @@ public class SixStarAdapter extends BaseQuickAdapter<RvData, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, RvData item) {
-        helper.setText(R.id.tv_item_six_star, item.getName());
+        helper.setText(R.id.tv_item_cube, item.getName());
 
-        Glide.with(mContext).load(item.getUrl()).into((ImageView) helper.getView(R.id.iv_item_six_star));
+        Glide.with(mContext).load(item.getUrl()).into((ImageView) helper.getView(R.id.iv_item_cube));
     }
 }

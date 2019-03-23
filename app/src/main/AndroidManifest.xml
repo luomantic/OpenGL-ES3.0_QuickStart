@@ -24,10 +24,13 @@
 
         <activity android:name=".act.HomeSimpleAct" />
         <activity android:name=".act.TriangleAct" />
+
         <activity android:name=".act.SixStarAct" />
-        <activity android:name=".act.CubeAct" />
         <activity android:name=".act.SixStarOrthoAct" />
         <activity android:name=".act.SixStarFrustumAct" />
+
+        <activity android:name=".act.CubeAct" />
+        <activity android:name=".act.CubeTranslateAct" />
     </application>
 
 </manifest>

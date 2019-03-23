@@ -1,5 +1,6 @@
 package com.example.opengles.adapter;
 
+import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -10,9 +11,9 @@ import com.example.opengles.models.RvData;
 
 import java.util.List;
 
-public class HomeAdapter extends BaseQuickAdapter<RvData, BaseViewHolder> {
+public class CubeAdapter extends BaseQuickAdapter<RvData, BaseViewHolder> {
 
-    public HomeAdapter(int layoutResId, List<RvData> data) {
+    public CubeAdapter(int layoutResId, @Nullable List<RvData> data) {
         super(layoutResId, data);
     }
 

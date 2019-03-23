@@ -12,7 +12,7 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
 /**
- * 颜色立方体
+ * 立方体
  */
 public class Cube {
     private int mProgram; // 自定义渲染管线着色器程序id
