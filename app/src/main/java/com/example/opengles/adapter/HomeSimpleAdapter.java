@@ -16,14 +16,14 @@ public class HomeSimpleAdapter extends BaseQuickAdapter<String, BaseViewHolder> 
 
     @Override
     protected void convert(BaseViewHolder helper, String text) {
-        helper.setText(R.id.id_num, text)
-                .setText(R.id.id_text, "第" + helper.getAdapterPosition() + "个数据")
-                .addOnClickListener(R.id.id_num);
+        helper.setText(R.id.tv_num_home_simple, text)
+                .setText(R.id.tv_item_six_star, "第" + helper.getAdapterPosition() + "个数据")
+                .addOnClickListener(R.id.tv_num_home_simple);
 
         if (helper.getAdapterPosition() % 2 == 0) {
-            helper.setTextColor(R.id.id_num, Color.GREEN);
+            helper.setTextColor(R.id.tv_num_home_simple, Color.GREEN);
         } else {
-            helper.setTextColor(R.id.id_num, Color.BLUE);
+            helper.setTextColor(R.id.tv_num_home_simple, Color.BLUE);
         }
     }
 }

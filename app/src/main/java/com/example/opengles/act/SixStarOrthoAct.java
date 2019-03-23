@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.example.opengles.views.SixPointStarSV;
+import com.example.opengles.views.SixStarOrthoSV;
 
 /**
- * 正交投影与透视投影
+ * 正交投影
  */
-public class SixPointStarAct extends Activity {
-    private SixPointStarSV starSV;
+public class SixStarOrthoAct extends Activity {
+    private SixStarOrthoSV starOrthoSV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,22 +22,22 @@ public class SixPointStarAct extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        starSV = new SixPointStarSV(this);
-        setContentView(starSV);
+        starOrthoSV = new SixStarOrthoSV(this);
+        setContentView(starOrthoSV);
 
-        starSV.requestFocus();
-        starSV.setFocusableInTouchMode(true);
+        starOrthoSV.requestFocus();
+        starOrthoSV.setFocusableInTouchMode(true);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        starSV.onResume();
+        starOrthoSV.onResume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        starSV.onPause();
+        starOrthoSV.onPause();
     }
 }

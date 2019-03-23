@@ -28,7 +28,7 @@ public class HomeSimpleAct extends AppCompatActivity {
     }
 
     private void initView() {
-        RecyclerView recyclerView = findViewById(R.id.gl_rv);
+        RecyclerView recyclerView = findViewById(R.id.rv_home_simple);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         HomeSimpleAdapter homeSimpleAdapter = new HomeSimpleAdapter(R.layout.item_home_adapter_simple, dataList);
 
