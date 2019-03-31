@@ -1,3 +1,4 @@
-# openGL-ES3.0
+### OpenGL-ES3.0的学习与使用
 
-### Coding for openGL ES 3.x 游戏开发
+#### 教程基于 《OpenGL ES 3.x 游戏开发》
+1. 绘制一个自动旋转的三角形
